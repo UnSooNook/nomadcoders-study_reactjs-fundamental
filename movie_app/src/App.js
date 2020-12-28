@@ -3,18 +3,24 @@ import React from "react";
 function App() {
   return (
     <div>
-      <h1>Hello!!!!</h1>
-      <Food fav="kimchi" />
-      <Food fav="ramen" />
-      <Food fav="삼겹살" />
-      <Food fav="쭈꾸미" />
+      {foodILike.map(dish => <Food name={dish.name} picture={dish.image}/>)}
     </div>
   );
 }
 
-function Food({ fav }) {
+const foodILike = [
+  { name: "kimchi", image: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=700%2C636" },
+  { name: "ramen", image: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=700%2C636" },
+  { name: "삼겹살", image: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=700%2C636" },
+  { name: "쭈꾸미", image: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=700%2C636" }
+]
+
+function Food({ name, picture }) {
   return (
-    <h3>I like {fav}</h3>
+    <div>
+      <h3>I like {name}</h3>
+      <img src={picture} />
+    </div>
   );
 }
 
