@@ -48,7 +48,7 @@ function Food({ name, picture, rating }) {
     <div>
       <h3>I like {name}</h3>
       <h4>{rating}/5.0</h4>
-      <img src={picture} alt={name}/>
+      <img src={picture} alt={name} width="50%" height="50%" />
     </div>
   );
 }
